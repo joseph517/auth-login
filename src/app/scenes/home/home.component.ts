@@ -17,6 +17,8 @@ interface Data {
 })
 export class HomeComponent {
   data: Data[] = []
+  Id: number = 1;
+
 
   constructor(public router: Router) { }
   logOut() {
@@ -26,6 +28,19 @@ export class HomeComponent {
   ngOnInit() {
     request("/posts", "GET").then((response) => {
       this.data = response
+    })
+  }
+
+  add() {
+    this.router.navigate(["add"])
+  }
+
+  delete(id: number) {
+    console.log(id)
+    request(`/posts/${id}`, "DELETE", {
+    }).then((response) => {
+      console.log(response)
+      alert('eliminado exitosamente')
     })
   }
 }

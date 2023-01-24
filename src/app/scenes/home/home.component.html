@@ -3,10 +3,18 @@
     <button (click)="logOut()">LogOUT</button>
 </ul>
 
-<div class="container" *ngFor="let carData of data">
-    <div class="id">{{carData.id}}</div>
-    <div class="title">{{carData.title}}</div>
-    <button>eliminar</button>
-    <br />
-    <br />
+<div class="app-content">
+    <div class="add">
+        <button (click)="add()">Agregar</button>
+    </div>
+    <br>
+    <br><br>
+    <div class="container" *ngFor="let carData of data">
+        <div class="id">{{carData.id}}</div>
+        <div class="title">{{carData.title}}</div>
+        <button (click)="delete(carData.id)">eliminar</button>
+        <br />
+        <br />
+    </div>
+
 </div>

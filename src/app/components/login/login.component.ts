@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import request from 'src/utils/requests';
 @Component({
@@ -11,7 +11,7 @@ export class LoginComponent {
   validEmail: string = "test@test.co"
   validPassword: string = "12345678"
 
-  @Input() email: string = '';
+  email: string = '';
   password: string = '';
 
   constructor(public router: Router) { }

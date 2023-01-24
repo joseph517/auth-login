@@ -1,0 +1,12 @@
+<div class="app-content">
+    <form class="custom-form" action="" method="post">
+        <label for="uname"><b>
+                <title></title>
+            </b></label>
+        <input type="text" [(ngModel)]="title" name="title" placeholder="title" required="required" />
+
+        <label for="psw"><b>Password</b></label>
+        <input type="text" [(ngModel)]="body" name="body" placeholder="body" required="required" />
+        <button type="submit" (click)="add()">agregar</button>
+    </form>
+</div>
