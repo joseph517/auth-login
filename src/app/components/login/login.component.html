@@ -1,13 +1,27 @@
-<div class="login">
-    <form class="custom-form" action="" method="post">
+<body>
+  <div class="login">
+    <div class="login-screen">
+      <div class="app-title">
+        <h1>Login</h1>
+      </div>
+      <form>
+        <div class="login-form">
+          <div class="control-group">
+            <input [(ngModel)]="email" type="text" class="login-field" placeholder="Email" name="email" required="required">
+            <label class="login-field-icon fui-user" for="login-name"></label>
+          </div>
 
+          <div class="control-group">
+            <input [(ngModel)]="password" type="password" class="login-field" placeholder="Password" name="password" required="required">
+            <label class="login-field-icon fui-lock" for="login-pass"></label>
+          </div>
 
-        <label for="uname"><b>Username</b></label>
-        <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required="required" />
+          <button class="btn btn-primary btn-large btn-block" type="submit" (click)="login()">Login</button>
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" [(ngModel)]="password" name="password" placeholder="Password" required="required" />
+          <a class="login-link" href="#">Lost your password?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
 
-        <button type="submit" (click)="login()">Login</button>
-    </form>
-</div>
