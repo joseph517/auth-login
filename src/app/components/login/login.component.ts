@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import request from 'src/utils/requests';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertErrComponent } from '../alert-err/alert-err.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +16,14 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor(public router: Router) { }
+  constructor(
+    public router: Router,
+    public dialog: MatDialog
+  ) { }
+
+  openDialog(): void{
+    this.dialog.open(AlertErrComponent)
+  }
 
   login() {
 
@@ -23,7 +32,7 @@ export class LoginComponent {
       this.router.navigate(["/"])
       return;
     }
-    alert("credenciales incorrectas")
+    this.openDialog()
     return;
   }
 
