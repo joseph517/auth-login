@@ -53,14 +53,17 @@ ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 15px;
-  // .container{
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   button{
-  //     max-width: 65px;
-  //   }
-  // }
+  .container{
+    .id{
+      text-align: center;
+    }
+    .title{
+      text-align: center;
+    }
+    .card-actions{
+      justify-content: center;
+    }
+  }
 }
 
 

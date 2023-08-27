@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import request from 'src/utils/requests';
 
+
 interface Data {
   userId: number,
   id: number,
@@ -36,10 +37,9 @@ export class HomeComponent {
   }
 
   delete(id: number) {
-    console.log(id)
     request(`/posts/${id}`, "DELETE", {
     }).then((response) => {
-      console.log(response)
+      this.data = this.data.filter(item => item.id != id)
       alert('eliminado exitosamente')
     })
   }

@@ -11,6 +11,8 @@ import { AlertErrComponent } from './components/alert-err/alert-err.component';
 
 import { MatDialogModule, } from '@angular/material/dialog'
 import { MatButtonModule } from '@angular/material/button'
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { MatButtonModule } from '@angular/material/button'
     AppRoutingModule,
     FormsModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
   ],
   entryComponents: [AlertErrComponent],
   providers: [],

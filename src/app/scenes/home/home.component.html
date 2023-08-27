@@ -7,9 +7,16 @@
   <button mat-stroked-button color="primary" (click)="add()">Agregar</button>
 </div>
 <div class="app-content">
-    <div class="container" *ngFor="let carData of data">
-        <div class="id">{{carData.id}}</div>
-        <div class="title">{{carData.title}}</div>
-        <button (click)="delete(carData.id)">eliminar</button>
-    </div>
+  <mat-card class="container" *ngFor="let carData of data" >
+    <mat-card-title class="id"> {{carData.id}} </mat-card-title>
+    <mat-card-content class="title" >
+      <p>
+        {{carData.title}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="card-actions">
+      <button mat-button (click)="delete(carData.id)" >Eliminar</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
+
