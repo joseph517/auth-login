@@ -1,20 +1,15 @@
 <ul>
-    <li><a class="active" href="#home">test@test.</a></li>
-    <button (click)="logOut()">LogOUT</button>
+    <li><a class="active" href="/">test@test.</a></li>
+    <button  class="btn btn-primary btn-large btn-block" (click)="logOut()">LogOUT</button>
 </ul>
 
+<div class="add">
+  <button mat-stroked-button color="primary" (click)="add()">Agregar</button>
+</div>
 <div class="app-content">
-    <div class="add">
-        <button (click)="add()">Agregar</button>
-    </div>
-    <br>
-    <br><br>
     <div class="container" *ngFor="let carData of data">
         <div class="id">{{carData.id}}</div>
         <div class="title">{{carData.title}}</div>
         <button (click)="delete(carData.id)">eliminar</button>
-        <br />
-        <br />
     </div>
-
 </div>
