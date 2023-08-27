@@ -1,10 +1,12 @@
 FROM node:18.17.0-alpine
 
-RUN mkdir -p /app
+RUN mkdir /app
 
 WORKDIR /app
 
 COPY package.json /app
+
+RUN npm install -g @angular/cli
 
 RUN npm install
 
