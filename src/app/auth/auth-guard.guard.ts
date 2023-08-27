@@ -29,3 +29,31 @@ export class AuthGuard implements CanActivate {
   }
 
 }
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LoginIn implements CanActivate {
+
+
+  isAuthenticated(): boolean {
+    const token = localStorage.getItem("token");
+    return token !== null;
+  }
+
+  constructor(private router: Router) { }
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    const isAuthenticated = this.isAuthenticated()
+
+    if (isAuthenticated && state.url.includes('login')) {
+      this.router.navigate(['/']);
+      return isAuthenticated;
+    }
+    return !isAuthenticated;
+  }
+
+}
