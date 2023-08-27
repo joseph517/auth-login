@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import request from 'src/utils/requests';
-
+import { MatDialog } from '@angular/material/dialog';
+import { AddComponent } from 'src/app/components/add/add.component';
 
 interface Data {
   userId: number,
@@ -16,12 +17,17 @@ interface Data {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent {
   data: Data[] = []
   Id: number = 1;
 
 
-  constructor(public router: Router) { }
+  constructor(
+    public router: Router,
+    public dialog: MatDialog,
+  ) { }
+
   logOut() {
     localStorage.removeItem('token')
     this.router.navigate(["login"])
@@ -32,8 +38,13 @@ export class HomeComponent {
     })
   }
 
+  openDialog(): void{
+    this.dialog.open(AddComponent)
+  }
+
   add() {
-    this.router.navigate(["add"])
+    // this.router.navigate(["add"])
+    this.openDialog()
   }
 
   delete(id: number) {

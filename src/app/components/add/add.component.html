@@ -1,12 +1,17 @@
 <div class="app-content">
-    <form class="custom-form" action="" method="post">
-        <label for="uname"><b>
-                <title></title>
-            </b></label>
-        <input type="text" [(ngModel)]="title" name="title" placeholder="title" required="required" />
+  <form class="example-form custom-form" action="" method="post">
 
-        <label for="psw"><b>Password</b></label>
-        <input type="text" [(ngModel)]="body" name="body" placeholder="body" required="required" />
-        <button type="submit" (click)="add()">agregar</button>
-    </form>
+    <mat-form-field>
+      <mat-label>Ingresa un titulo</mat-label>
+      <input matInput [(ngModel)]="title" name="title" placeholder="Titulo" required="required">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ingresa una descripcion</mat-label>
+      <input matInput [(ngModel)]="body" name="body" placeholder="Descripcion" required="required">
+    </mat-form-field>
+
+    <button mat-button type="submit" (click)="add()">agregar</button>
+
+  </form>
 </div>

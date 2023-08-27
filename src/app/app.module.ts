@@ -12,6 +12,9 @@ import { AlertErrComponent } from './components/alert-err/alert-err.component';
 import { MatDialogModule, } from '@angular/material/dialog'
 import { MatButtonModule } from '@angular/material/button'
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+
+
 
 
 @NgModule({
@@ -28,9 +31,10 @@ import {MatCardModule} from '@angular/material/card';
     FormsModule,
     MatButtonModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule
   ],
-  entryComponents: [AlertErrComponent],
+  entryComponents: [AlertErrComponent, AddComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
