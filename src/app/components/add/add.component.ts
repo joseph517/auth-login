@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import request from 'src/utils/requests';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DataService } from 'src/app/service/dataService/data.service';
 
 
 
@@ -18,7 +19,8 @@ export class AddComponent implements OnInit {
   constructor(
     public router: Router,
     public dialogRef: MatDialogRef<AddComponent>,
-    @Inject(MAT_DIALOG_DATA) public message: string
+    @Inject(MAT_DIALOG_DATA) public message: string,
+    private dataService: DataService
   ) { }
 
   ngOnInit(): void {
@@ -32,16 +34,17 @@ export class AddComponent implements OnInit {
           body: this.body,
           userId: 1,
         }).then((response) => {
-          alert(`registro exitoso`)
-          this.router.navigate(["/"])
-        })
-      } else {
-        alert('debe tener mas de 3 caracteres')
-      }
-    }
-    else {
-      alert('datos incompletos')
-    }
+          // alert(`registro exitoso`);
+          // Agregar el nuevo elemento al servicio compartido
+          this.dataService.addData(response);
 
+          this.router.navigate(["/"]);
+        });
+      } else {
+        alert('debe tener mas de 3 caracteres');
+      }
+    } else {
+      alert('datos incompletos');
+    }
   }
 }

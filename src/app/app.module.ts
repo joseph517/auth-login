@@ -13,6 +13,8 @@ import { MatDialogModule, } from '@angular/material/dialog'
 import { MatButtonModule } from '@angular/material/button'
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 
 
@@ -32,7 +34,8 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     MatDialogModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ],
   entryComponents: [AlertErrComponent, AddComponent],
   providers: [],

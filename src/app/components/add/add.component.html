@@ -11,7 +11,7 @@
       <input matInput [(ngModel)]="body" name="body" placeholder="Descripcion" required="required">
     </mat-form-field>
 
-    <button mat-button type="submit" (click)="add()">agregar</button>
+    <button mat-button type="submit" [mat-dialog-close] (click)="add()">agregar</button>
 
   </form>
 </div>
